@@ -1,0 +1,99 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main", "master"]
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Validate JSON
+        run: |
+          echo "Validating apps.json..."
+          python3 -m json.tool data/apps.json > /dev/null
+          if [ $? -eq 0 ]; then
+            echo "✓ apps.json is valid JSON"
+          else
+            echo "✗ apps.json is invalid!"
+            exit 1
+          fi
+      
+      - name: Check app-ads.txt
+        run: |
+          if [ -f "app-ads.txt" ]; then
+            echo "✓ app-ads.txt exists"
+            echo "Content:"
+            cat app-ads.txt
+          else
+            echo "✗ app-ads.txt is missing!"
+            exit 1
+          fi
+      
+      - name: Check required files
+        run: |
+          required_files=("index.html" "robots.txt" "sitemap.xml" "privacy_policy.html")
+          for file in "${required_files[@]}"; do
+            if [ -f "$file" ]; then
+              echo "✓ $file exists"
+            else
+              echo "✗ $file is missing!"
+              exit 1
+            fi
+          done
+      
+      - name: Check CSS and JS
+        run: |
+          if [ -f "css/styles.css" ]; then
+            echo "✓ CSS file exists"
+          else
+            echo "✗ CSS file is missing!"
+            exit 1
+          fi
+          
+          if [ -f "js/app-loader.js" ]; then
+            echo "✓ JS file exists"
+          else
+            echo "✗ JS file is missing!"
+            exit 1
+          fi
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

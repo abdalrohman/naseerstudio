@@ -1,306 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NaseerStudio | Digital Experiences</title>
-    <meta name="description"
-        content="NaseerStudio - Creating premium mobile games and digital experiences. Creator of Connect Ball.">
-
+    <title>NaseerStudio | Premium Mobile Games & Apps</title>
+    <meta name="description" content="NaseerStudio - Creating premium mobile games and digital experiences. Download Connect Ball and more on Google Play Store.">
+    <meta name="keywords" content="mobile games, puzzle games, android games, connect ball, naseerstudio, casual games">
+    <meta name="author" content="NaseerStudio">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://naseerstudio.github.io/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://naseerstudio.github.io/">
+    <meta property="og:title" content="NaseerStudio | Premium Mobile Games & Apps">
+    <meta property="og:description" content="Crafting premium digital experiences and handcrafted puzzle games. Download our apps on Google Play Store.">
+    <meta property="og:image" content="https://naseerstudio.github.io/assets/studio/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://naseerstudio.github.io/">
+    <meta property="twitter:title" content="NaseerStudio | Premium Mobile Games & Apps">
+    <meta property="twitter:description" content="Crafting premium digital experiences and handcrafted puzzle games.">
+    <meta property="twitter:image" content="https://naseerstudio.github.io/assets/studio/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap"
-        rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-primary: #6366f1;
-            --accent-secondary: #0ea5e9;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --gradient: linear-gradient(135deg, #6366f1 0%, #0ea5e9 100%);
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NaseerStudio",
+        "url": "https://naseerstudio.github.io",
+        "logo": "https://naseerstudio.github.io/assets/studio/logo.png",
+        "description": "Crafting premium digital experiences and handcrafted puzzle games",
+        "email": "naseer.studio.official@gmail.com",
+        "foundingDate": "2026",
+        "sameAs": [
+            "https://play.google.com/store/apps/dev?id=YOUR_DEV_ID"
+        ],
+        "publisher": {
+            "@type": "Organization",
+            "name": "NaseerStudio"
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Hero Section */
-        header {
-            padding: 4rem 2rem;
-            text-align: center;
-            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
-        }
-
-        h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-
-        .tagline {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Grid Layout */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .section-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            padding-left: 1rem;
-            border-left: 4px solid var(--accent-primary);
-        }
-
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        /* Game Card - Unique Glassmorphism Look */
-        .game-card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .game-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .game-card:hover::before {
-            opacity: 1;
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .app-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--gradient);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-right: 1rem;
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-        }
-
-        .card-title h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .version-badge {
-            background: rgba(99, 102, 241, 0.2);
-            color: var(--accent-primary);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .features-list li {
-            margin-bottom: 0.5rem;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-        }
-
-        /* Custom Bullet Points */
-        .features-list li::before {
-            content: '•';
-            color: var(--accent-secondary);
-            font-size: 1.5rem;
-            line-height: 0;
-            margin-right: 0.5rem;
-        }
-
-        .cta-button {
-            display: block;
-            text-align: center;
-            background: white;
-            color: var(--bg-color);
-            padding: 12px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.2s ease;
-        }
-
-        .cta-button:hover {
-            background: var(--accent-secondary);
-            color: white;
-        }
-
-        /* Coming Soon Placeholder for Future Apps */
-        .game-card.coming-soon {
-            opacity: 0.7;
-            border: 1px dashed rgba(255, 255, 255, 0.1);
-            background: transparent;
-        }
-
-        .game-card.coming-soon:hover {
-            transform: none;
-            box-shadow: none;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 5rem;
-            padding: 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-        }
-
-        .footer-links {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-primary);
-        }
-
-        /* Verify Badge for AdMob */
-        .verified-badge {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(16, 185, 129, 0.1);
-            color: #10b981;
-            padding: 4px 12px;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            margin-top: 1rem;
-        }
-    </style>
+    }
+    </script>
+    
+    <!-- Google Analytics 4 - DISABLED (not configured yet)
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
 </head>
 
 <body>
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="nav-logo">NaseerStudio</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/privacy_policy.html">Privacy</a>
+            <a href="mailto:naseer.studio.official@gmail.com">Contact</a>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
     <header>
         <h1>NaseerStudio</h1>
         <p class="tagline">Crafting premium digital experiences and handcrafted puzzle games.</p>
     </header>
 
+    <!-- Main Content -->
     <div class="container">
         <h2 class="section-title">Games & Applications</h2>
-
-        <div class="games-grid">
-
-            <!-- App Card 1: Connect Ball -->
-            <div class="game-card">
-                <div class="card-header">
-                    <div class="app-icon">🎨</div>
-                    <div class="card-title">
-                        <h3>Connect Ball</h3>
-                        <span class="version-badge">Puzzle Game</span>
-                    </div>
-                </div>
-                <p style="margin-bottom: 1.5rem; color: #cbd5e1;">
-                    A minimal, brain-teasing puzzle game. Connect matching colors without crossing paths.
-                </p>
-                <ul class="features-list">
-                    <li>Hundreds of handcrafted levels</li>
-                    <li>Premium haptic feedback</li>
-                    <li>Relaxing soundscapes</li>
-                </ul>
-                <a href="https://play.google.com/store/apps/details?id=com.naseerstudio.connectball" class="cta-button">Download on Google Play</a>
-            </div>
-
-            <!-- Placeholder for Future Apps -->
-            <div class="game-card coming-soon">
-                <div class="card-header">
-                    <div class="app-icon" style="background: rgba(255,255,255,0.05); box-shadow: none;">🚀</div>
-                    <div class="card-title">
-                        <h3>Coming Soon</h3>
-                        <span class="version-badge"
-                            style="background: rgba(255,255,255,0.05); color: #94a3b8;">Development</span>
-                    </div>
-                </div>
-                <p style="margin-bottom: 1.5rem; color: #64748b;">
-                    We are building the next generation of productivity tools and casual games.
-                </p>
-                <div style="text-align: center; color: #64748b; font-size: 0.9rem; padding: 12px;">
-                    Stay Tuned
-                </div>
-            </div>
-
+        
+        <!-- Apps Grid - Dynamically Loaded -->
+        <div class="games-grid" id="appsGrid">
+            <!-- Apps will be loaded dynamically from apps.json -->
+            <div class="loading">Loading apps...</div>
         </div>
     </div>
 
+    <!-- About Section -->
+    <div class="container" style="margin-top: 4rem;">
+        <h2 class="section-title">About Us</h2>
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 20px; border: 1px solid var(--border-color);">
+            <p style="color: #cbd5e1; font-size: 1.1rem; line-height: 1.8;">
+                NaseerStudio is an independent mobile game studio dedicated to creating premium digital experiences. 
+                We focus on crafting beautifully designed, engaging puzzle games that challenge your mind while providing 
+                a relaxing experience. Our mission is to deliver high-quality games that you can enjoy anywhere, anytime.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 NaseerStudio. All rights reserved.</p>
+        <p>&copy; <span id="year">2026</span> NaseerStudio. All rights reserved.</p>
         <div class="footer-links">
             <a href="privacy_policy.html">Privacy Policy</a>
-            <a href="app-ads.txt">Ad Verification (app-ads.txt)</a>
+            <a href="app-ads.txt">Ad Verification</a>
             <a href="mailto:naseer.studio.official@gmail.com">Contact Support</a>
         </div>
         <div class="verified-badge">
@@ -308,6 +122,16 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="js/app-loader.js"></script>
+    <script>
+        // Update copyright year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Initialize app loading
+        document.addEventListener('DOMContentLoaded', function() {
+            AppLoader.renderApps('#appsGrid');
+        });
+    </script>
 </body>
-
 </html>

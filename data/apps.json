@@ -1,0 +1,84 @@
+{
+  "studio": {
+    "name": "NaseerStudio",
+    "email": "naseer.studio.official@gmail.com",
+    "founded": "2026",
+    "description": "Crafting premium digital experiences and handcrafted puzzle games",
+    "url": "https://naseerstudio.github.io",
+    "social": {
+      "playStore": "https://play.google.com/store/apps/dev?id=123456789",
+      "twitter": null,
+      "instagram": null
+    }
+  },
+  "apps": [
+    {
+      "id": "connect-ball",
+      "name": "Connect Ball",
+      "tagline": "A minimal, brain-teasing puzzle game. Connect matching colors without crossing paths.",
+      "category": "puzzle",
+      "subcategory": "casual",
+      "version": "1.0.0",
+      "icon": "🎨",
+      "iconImage": null,
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.naseerstudio.connectball",
+      "appStoreUrl": null,
+      "features": [
+        "Hundreds of handcrafted levels",
+        "Premium haptic feedback",
+        "Relaxing soundscapes",
+        "Beautiful minimalist design",
+        "No WiFi required - play offline"
+      ],
+      "screenshots": [],
+      "privacyPolicy": "shared",
+      "dataCollection": [
+        "device_id",
+        "ads",
+        "approximate_location"
+      ],
+      "thirdPartyServices": [
+        {
+          "name": "Google Play Services",
+          "privacyUrl": "https://www.google.com/policies/privacy/"
+        },
+        {
+          "name": "AdMob",
+          "privacyUrl": "https://support.google.com/admob/answer/6128543?hl=en"
+        }
+      ],
+      "permissions": [
+        "INTERNET",
+        "AD_ID",
+        "VIBRATE"
+      ],
+      "contentRating": "Everyone",
+      "status": "published",
+      "releaseDate": "2026-01-29",
+      "updatedDate": "2026-01-29",
+      "size": "25MB",
+      "downloads": "1,000+",
+      "rating": 4.8,
+      "price": "Free",
+      "inAppPurchases": false,
+      "containsAds": true
+    }
+  ],
+  "categories": {
+    "puzzle": {
+      "name": "Puzzle Games",
+      "description": "Brain-teasing games that challenge your mind",
+      "icon": "🧩"
+    },
+    "casual": {
+      "name": "Casual Games",
+      "description": "Relaxing games for everyone",
+      "icon": "🎮"
+    },
+    "productivity": {
+      "name": "Productivity",
+      "description": "Tools to help you work smarter",
+      "icon": "⚡"
+    }
+  }
+}

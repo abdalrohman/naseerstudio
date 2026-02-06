@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://abdalrohman.github.io/naseerstudio/sitemap.xml
+
+# Disallow admin and private areas (if any)
+Disallow: /.github/
+Disallow: /scripts/
