@@ -156,8 +156,8 @@ Update the app information with real data:
 ### Step 1: Create GitHub Repository
 
 1. Go to https://github.com/new
-2. **Repository name:** `naseerstudio.github.io`
-   - This creates a user/organization site at `https://naseerstudio.github.io`
+2. **Repository name:** `naseerstudio`
+   - This creates a user/organization site at `https://abdalrohman.github.io/naseerstudio`
    - Or use any name for a project site (e.g., `naseerstudio-market`)
 3. **Visibility:** Public ✓
 4. **Initialize:** Don't initialize (we have files ready)
@@ -179,7 +179,7 @@ git add .
 git commit -m "Initial commit: NaseerStudio market website"
 
 # Add remote (replace with your actual repo URL)
-git remote add origin https://github.com/naseerstudio/naseerstudio.github.io.git
+git remote add origin https://github.com/abdalrohman/naseerstudio.git
 
 # Push to main branch
 git push -u origin main
@@ -198,7 +198,7 @@ git push -u origin main
 
 1. Go to **Actions** tab in your repo
 2. Wait for the workflow to complete (should be green ✓)
-3. Visit your site: `https://naseerstudio.github.io`
+3. Visit your site: `https://abdalrohman.github.io/naseerstudio`
 4. Test all links:
    - [ ] Homepage loads
    - [ ] Privacy policy accessible
@@ -218,13 +218,13 @@ Once your site is live, update your Play Store listings:
 2. Select your app (Connect Ball)
 3. Go to **Policy** → **App content**
 4. Click **Privacy Policy**
-5. Enter URL: `https://naseerstudio.github.io/apps/connect-ball/privacy-policy.html`
+5. Enter URL: `https://abdalrohman.github.io/naseerstudio/apps/connect-ball/privacy-policy.html`
 6. Save
 
 ### Submit Sitemap to Google
 
 1. Go to https://search.google.com/search-console
-2. Add your property: `https://naseerstudio.github.io`
+2. Add your property: `https://abdalrohman.github.io/naseerstudio`
 3. Verify ownership (HTML file upload or DNS)
 4. Go to **Sitemaps**
 5. Submit: `sitemap.xml`
@@ -234,7 +234,7 @@ Once your site is live, update your Play Store listings:
 Verify app-ads.txt is accessible:
 
 ```
-https://naseerstudio.github.io/app-ads.txt
+https://abdalrohman.github.io/naseerstudio/app-ads.txt
 ```
 
 This must show your AdMob publisher ID for verification.
@@ -290,7 +290,7 @@ Add to `sitemap.xml`:
 
 ```xml
 <url>
-  <loc>https://naseerstudio.github.io/apps/your-new-app/</loc>
+  <loc>https://abdalrohman.github.io/naseerstudio/apps/your-new-app/</loc>
   <lastmod>2026-02-06</lastmod>
   <priority>0.9</priority>
 </url>
@@ -344,7 +344,7 @@ GitHub Actions will automatically deploy! 🎉
 **Solution:**
 1. Verify file is at repository root (not in subfolder)
 2. Check file is committed: `git add app-ads.txt`
-3. URL should be: `https://naseerstudio.github.io/app-ads.txt`
+3. URL should be: `https://abdalrohman.github.io/naseerstudio/app-ads.txt`
 
 ### Issue: Privacy policy URL not working in Play Console
 
@@ -409,8 +409,8 @@ When you're ready to upgrade to Next.js:
 ## 📞 Support & Resources
 
 ### Links:
-- **Live Site:** https://naseerstudio.github.io
-- **Repository:** https://github.com/naseerstudio/naseerstudio.github.io
+- **Live Site:** https://abdalrohman.github.io/naseerstudio
+- **Repository:** https://github.com/abdalrohman/naseerstudio
 - **GitHub Pages Docs:** https://docs.github.com/en/pages
 
 ### Contact:
@@ -426,7 +426,7 @@ Before going live:
 - [ ] All files pushed to main branch
 - [ ] GitHub Pages enabled in Settings
 - [ ] GitHub Actions workflow running
-- [ ] Site loads at `https://naseerstudio.github.io`
+- [ ] Site loads at `https://abdalrohman.github.io/naseerstudio`
 - [ ] Privacy policy loads correctly
 - [ ] app-ads.txt accessible
 - [ ] Play Console updated with privacy URL

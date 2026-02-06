@@ -1,10 +1,10 @@
 # NaseerStudio Market Website
 
-[![Deploy to GitHub Pages](https://github.com/naseerstudio/naseerstudio.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/naseerstudio/naseerstudio.github.io/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/abdalrohman/naseerstudio/actions/workflows/deploy.yml/badge.svg)](https://github.com/abdalrohman/naseerstudio/actions/workflows/deploy.yml)
 
 Official website for NaseerStudio - showcasing our mobile games and applications.
 
-🔗 **Live Site:** [https://naseerstudio.github.io](https://naseerstudio.github.io)
+🔗 **Live Site:** [https://abdalrohman.github.io/naseerstudio](https://abdalrohman.github.io/naseerstudio)
 
 ## 🎮 About
 
@@ -44,8 +44,8 @@ NaseerStudio is an independent mobile game studio creating premium digital exper
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/naseerstudio/naseerstudio.github.io.git
-cd naseerstudio.github.io
+git clone https://github.com/abdalrohman/naseerstudio.git
+cd naseerstudio
 ```
 
 2. Serve locally (any static server works):
@@ -164,7 +164,7 @@ To enable:
 The `app-ads.txt` file at the root enables AdMob verification. Ensure this file is accessible at:
 
 ```
-https://naseerstudio.github.io/app-ads.txt
+https://abdalrohman.github.io/naseerstudio/app-ads.txt
 ```
 
 ## 🎨 Customization
@@ -201,7 +201,7 @@ The site uses Google Fonts (Outfit & Plus Jakarta Sans). Modify in HTML `<head>`
 ## 📞 Contact
 
 - **Email:** naseer.studio.official@gmail.com
-- **Website:** https://naseerstudio.github.io
+- **Website:** https://abdalrohman.github.io/naseerstudio
 
 ---
 
