@@ -50,7 +50,7 @@ const AppLoader = (function() {
                     <a href="${app.playStoreUrl}" class="cta-button" target="_blank" rel="noopener noreferrer">
                         Download on Google Play
                     </a>
-                    <a href="apps/${app.id}/" class="secondary-button">View Details</a>
+                    <a href="/naseerstudio/apps/${app.id}/" class="secondary-button">View Details</a>
                 ` : `
                     <p style="color: #64748b; font-size: 0.9rem;">We are building the next generation of ${app.category} experiences.</p>
                     <div style="text-align: center; color: #64748b; font-size: 0.9rem; padding: 12px;">
