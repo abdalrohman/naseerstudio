@@ -10,7 +10,7 @@ const AppLoader = (function() {
         if (appsData) return appsData;
         
         try {
-            const response = await fetch('data/apps.json');
+            const response = await fetch('/naseerstudio/data/apps.json');
             if (!response.ok) throw new Error('Failed to load apps data');
             appsData = await response.json();
             return appsData;
@@ -25,37 +25,36 @@ const AppLoader = (function() {
         const isComingSoon = app.status === 'coming_soon';
         
         return `
-            <div class="game-card ${isComingSoon ? 'coming-soon' : ''}" data-category="${app.category}" data-id="${app.id}">
-                <div class="card-header">
-                    <div class="app-icon" ${!isPublished ? 'style="background: rgba(255,255,255,0.05); box-shadow: none;"' : ''}>
+            <div class="app-card ${isComingSoon ? 'coming-soon' : ''}" data-category="${app.category}" data-id="${app.id}">
+                <div class="app-card-header">
+                    <div class="app-icon" ${!isPublished ? 'style="background: var(--text-muted);"' : ''}>
                         ${app.icon}
                     </div>
-                    <div class="card-title">
+                    <div class="app-title">
                         <h3>${app.name}</h3>
-                        <span class="version-badge" ${!isPublished ? 'style="background: rgba(255,255,255,0.05); color: #94a3b8;"' : ''}>
-                            ${isPublished ? app.category.charAt(0).toUpperCase() + app.category.slice(1) : 'Development'}
-                        </span>
+                        <span class="app-category">${app.category}</span>
                     </div>
                 </div>
-                <p style="margin-bottom: 1.5rem; color: #cbd5e1;">${app.tagline}</p>
+                <p class="app-description">${app.tagline}</p>
                 ${isPublished ? `
-                    <ul class="features-list">
+                    <ul class="app-features">
                         ${app.features.slice(0, 3).map(f => `<li>${f}</li>`).join('')}
                     </ul>
                     <div class="app-meta">
-                        <span class="meta-item">⭐ ${app.rating}</span>
-                        <span class="meta-item">⬇️ ${app.downloads}</span>
-                        <span class="meta-item">📱 ${app.size}</span>
+                        <span class="app-meta-item">⭐ ${app.rating}</span>
+                        <span class="app-meta-item">⬇️ ${app.downloads}</span>
+                        <span class="app-meta-item">📱 ${app.size}</span>
                     </div>
-                    <a href="${app.playStoreUrl}" class="cta-button" target="_blank" rel="noopener noreferrer">
-                        Download on Google Play
-                    </a>
-                    <a href="/naseerstudio/apps/${app.id}/" class="secondary-button">View Details</a>
+                    <div class="app-actions">
+                        <a href="${app.playStoreUrl}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            Download on Google Play
+                        </a>
+                        <a href="/naseerstudio/apps/${app.id}/" class="btn btn-secondary">View Details</a>
+                    </div>
                 ` : `
-                    <p style="color: #64748b; font-size: 0.9rem;">We are building the next generation of ${app.category} experiences.</p>
-                    <div style="text-align: center; color: #64748b; font-size: 0.9rem; padding: 12px;">
-                        Stay Tuned
-                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: auto;">
+                        Coming soon to mobile devices.
+                    </p>
                 `}
             </div>
         `;
@@ -95,64 +94,85 @@ const AppLoader = (function() {
         
         container.innerHTML = `
             <div class="app-detail">
-                <div class="app-hero">
-                    <div class="app-icon-large">${app.icon}</div>
-                    <div class="app-info">
-                        <h1>${app.name}</h1>
-                        <p class="tagline">${app.tagline}</p>
-                        <div class="app-stats">
-                            <span class="stat">⭐ ${app.rating}</span>
-                            <span class="stat">⬇️ ${app.downloads}</span>
-                            <span class="stat">📱 ${app.size}</span>
-                        </div>
-                        <div class="app-buttons">
-                            ${app.playStoreUrl ? `<a href="${app.playStoreUrl}" class="cta-button" target="_blank">Get it on Google Play</a>` : ''}
-                            ${app.appStoreUrl ? `<a href="${app.appStoreUrl}" class="cta-button secondary" target="_blank">Download on App Store</a>` : ''}
+                <div class="app-detail-hero">
+                    <div class="container">
+                        <div class="app-detail-content">
+                            <div class="app-icon-large">${app.icon}</div>
+                            <div class="app-detail-info">
+                                <h1>${app.name}</h1>
+                                <p class="app-detail-tagline">${app.tagline}</p>
+                                <div class="app-stats">
+                                    <div class="app-stat">
+                                        <span class="app-stat-value">⭐ ${app.rating}</span>
+                                        <span class="app-stat-label">Rating</span>
+                                    </div>
+                                    <div class="app-stat">
+                                        <span class="app-stat-value">⬇️ ${app.downloads}</span>
+                                        <span class="app-stat-label">Downloads</span>
+                                    </div>
+                                    <div class="app-stat">
+                                        <span class="app-stat-value">📱 ${app.size}</span>
+                                        <span class="app-stat-label">Size</span>
+                                    </div>
+                                </div>
+                                <div class="app-actions-row">
+                                    ${app.playStoreUrl ? `<a href="${app.playStoreUrl}" class="btn btn-primary" target="_blank">Get it on Google Play</a>` : ''}
+                                    ${app.appStoreUrl ? `<a href="${app.appStoreUrl}" class="btn btn-secondary" target="_blank">Download on App Store</a>` : ''}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="app-content">
-                    <section class="features-section">
-                        <h2>Features</h2>
-                        <ul class="features-list detailed">
-                            ${app.features.map(f => `<li>${f}</li>`).join('')}
-                        </ul>
-                    </section>
-                    
-                    <section class="info-section">
-                        <h2>App Information</h2>
-                        <div class="info-grid">
-                            <div class="info-item">
-                                <span class="label">Version</span>
-                                <span class="value">${app.version}</span>
+                <div class="container">
+                    <div class="app-content">
+                        <section class="features-section">
+                            <div class="section-header">
+                                <span class="section-tag">Features</span>
+                                <h2 class="section-title">What Makes It Special</h2>
                             </div>
-                            <div class="info-item">
-                                <span class="label">Category</span>
-                                <span class="value">${app.category}</span>
+                            <ul class="app-features detailed">
+                                ${app.features.map(f => `<li>${f}</li>`).join('')}
+                            </ul>
+                        </section>
+                        
+                        <section class="info-section" style="margin-top: var(--space-2xl);">
+                            <div class="section-header">
+                                <span class="section-tag">Details</span>
+                                <h2 class="section-title">App Information</h2>
                             </div>
-                            <div class="info-item">
-                                <span class="label">Content Rating</span>
-                                <span class="value">${app.contentRating}</span>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">Version</span>
+                                    <span class="info-value">${app.version}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Category</span>
+                                    <span class="info-value">${app.category}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Content Rating</span>
+                                    <span class="info-value">${app.contentRating}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Released</span>
+                                    <span class="info-value">${new Date(app.releaseDate).toLocaleDateString()}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Price</span>
+                                    <span class="info-value">${app.price}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">In-app Purchases</span>
+                                    <span class="info-value">${app.inAppPurchases ? 'Yes' : 'No'}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Contains Ads</span>
+                                    <span class="info-value">${app.containsAds ? 'Yes' : 'No'}</span>
+                                </div>
                             </div>
-                            <div class="info-item">
-                                <span class="label">Released</span>
-                                <span class="value">${new Date(app.releaseDate).toLocaleDateString()}</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">Price</span>
-                                <span class="value">${app.price}</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">In-app Purchases</span>
-                                <span class="value">${app.inAppPurchases ? 'Yes' : 'No'}</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">Contains Ads</span>
-                                <span class="value">${app.containsAds ? 'Yes' : 'No'}</span>
-                            </div>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
                 </div>
             </div>
         `;
@@ -168,8 +188,8 @@ const AppLoader = (function() {
 // Auto-initialize if DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-        AppLoader.renderApps('.games-grid');
+        AppLoader.renderApps('#appsGrid');
     });
 } else {
-    AppLoader.renderApps('.games-grid');
+    AppLoader.renderApps('#appsGrid');
 }
