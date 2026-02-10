@@ -6,15 +6,15 @@
     <title>Privacy Policy | NaseerStudio</title>
     <meta name="description" content="Privacy Policy for NaseerStudio mobile applications. Learn how we collect, use, and protect your data across all our games and apps.">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://abdalrohman.github.io/naseerstudio/privacy_policy.html">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="/naseerstudio/css/modern-styles.css?v=2">
 </head>
@@ -35,7 +35,7 @@
         <div class="container">
             <a href="/naseerstudio/" class="back-link">← Back to Home</a>
         </div>
-        
+
         <div class="privacy-container">
             <div class="privacy-content">
                 <h1>Privacy Policy</h1>
@@ -53,28 +53,29 @@
                     <li>Device advertising identifiers (for personalized ads)</li>
                     <li>General location data (country/region level, derived from IP)</li>
                 </ul>
-                
+
                 <p><strong>Important:</strong> Our Applications do not gather precise GPS location information about your mobile device.</p>
-                
+
                 <p>The Service Provider may use the information you provided to contact you from time to time to provide you with important information, required notices, and marketing promotions related to our applications.</p>
-                
+
                 <p>For a better experience while using our Applications, the Service Provider may require you to provide certain personally identifiable information. The information that the Service Provider requests will be retained by them and used as described in this privacy policy.</p>
 
                 <h2>Third Party Access</h2>
                 <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Applications and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy policy.</p>
-                
+
                 <p>Please note that our Applications utilize third-party services that have their own Privacy Policy about handling data. Below are the links to the Privacy Policy of the third-party service providers used by our Applications:</p>
                 <ul>
                     <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Google Play Services</a> - For app distribution and updates</li>
                     <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">AdMob</a> - For displaying advertisements</li>
                 </ul>
-                
+
                 <p><em>Note: We currently do not use Firebase Analytics or other analytics services. If we add analytics in the future, this policy will be updated.</em></p>
 
                 <h2>App-Specific Privacy Policies</h2>
                 <p>For detailed privacy information about specific applications, please refer to their individual privacy policy pages:</p>
                 <ul>
                     <li><a href="/naseerstudio/apps/connect-ball/privacy-policy.html">Connect Ball - Privacy Policy</a></li>
+                    <li><a href="/naseerstudio/apps/connect-block/privacy-policy.html">Connect Block - Privacy Policy</a></li>
                 </ul>
 
                 <h2>Cookies</h2>
@@ -83,12 +84,12 @@
 
                 <h2>Security</h2>
                 <p>The Service Provider is concerned about safeguarding the confidentiality of your information. We provide physical, electronic, and procedural safeguards to protect the information we process and maintain. For example, we limit access to this information to authorized employees and contractors who need to know that information in order to operate, develop or improve our Applications.</p>
-                
+
                 <p>However, please be aware that, although we endeavor to provide reasonable security for information we process and maintain, no security system can prevent all potential security breaches.</p>
 
                 <h2>Children's Privacy</h2>
                 <p>Our Applications are rated "Everyone" and we do not knowingly collect personally identifiable information from children under 13 years of age. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers.</p>
-                
+
                 <p>If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we can take necessary actions.</p>
 
                 <h2>Your Data Rights</h2>
@@ -134,9 +135,9 @@
                 </ul>
 
                 <hr style="border: none; border-top: 1px solid var(--border-color); margin: var(--space-xl) 0;">
-                
+
                 <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    By using our Applications, you agree to the collection and use of information in accordance with this policy. 
+                    By using our Applications, you agree to the collection and use of information in accordance with this policy.
                     Thank you for trusting NaseerStudio.
                 </p>
             </div>
@@ -169,21 +170,21 @@
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         const html = document.documentElement;
-        
+
         // Check for saved theme preference
         const savedTheme = localStorage.getItem('theme') || 'dark';
         html.setAttribute('data-theme', savedTheme);
         themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
-        
+
         themeToggle.addEventListener('click', () => {
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
+
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             themeIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
         });
-        
+
         // Update copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>

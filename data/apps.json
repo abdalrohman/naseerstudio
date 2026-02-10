@@ -62,6 +62,57 @@
       "price": "Free",
       "inAppPurchases": false,
       "containsAds": true
+    },
+    {
+      "id": "connect-block",
+      "name": "Connect Block - Neon Flow",
+      "tagline": "Connect the blocks in this neon-styled puzzle game. Infinite levels, no wifi needed.",
+      "category": "puzzle",
+      "subcategory": "casual",
+      "version": "1.0.0",
+      "icon": "🧩",
+      "iconImage": null,
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.naseerstudio.connect_block",
+      "appStoreUrl": null,
+      "features": [
+        "Infinite procedural levels",
+        "Zen neon aesthetics",
+        "Satisfying liquid flow animations",
+        "Premium haptic feedback",
+        "Offline play supported"
+      ],
+      "screenshots": [],
+      "privacyPolicy": "shared",
+      "dataCollection": [
+        "device_id",
+        "ads",
+        "approximate_location"
+      ],
+      "thirdPartyServices": [
+        {
+          "name": "Google Play Services",
+          "privacyUrl": "https://www.google.com/policies/privacy/"
+        },
+        {
+          "name": "AdMob",
+          "privacyUrl": "https://support.google.com/admob/answer/6128543?hl=en"
+        }
+      ],
+      "permissions": [
+        "INTERNET",
+        "AD_ID",
+        "VIBRATE"
+      ],
+      "contentRating": "Everyone",
+      "status": "published",
+      "releaseDate": "2026-02-10",
+      "updatedDate": "2026-02-10",
+      "size": "28MB",
+      "downloads": "100+",
+      "rating": 4.9,
+      "price": "Free",
+      "inAppPurchases": true,
+      "containsAds": true
     }
   ],
   "categories": {
