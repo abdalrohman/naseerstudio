@@ -4,7 +4,7 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main", "master"]
-  
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -27,10 +27,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        
+
       - name: Validate JSON
         run: |
           echo "Validating apps.json..."
@@ -41,7 +41,7 @@ jobs:
             echo "✗ apps.json is invalid!"
             exit 1
           fi
-      
+
       - name: Check app-ads.txt
         run: |
           if [ -f "app-ads.txt" ]; then
@@ -52,7 +52,7 @@ jobs:
             echo "✗ app-ads.txt is missing!"
             exit 1
           fi
-      
+
       - name: Check required files
         run: |
           required_files=("index.html" "robots.txt" "sitemap.xml" "privacy_policy.html")
@@ -64,23 +64,23 @@ jobs:
               exit 1
             fi
           done
-      
+
       - name: Check CSS and JS
         run: |
-          if [ -f "css/styles.css" ]; then
+          if [ -f "css/modern-styles.css" ]; then
             echo "✓ CSS file exists"
           else
             echo "✗ CSS file is missing!"
             exit 1
           fi
-          
+
           if [ -f "js/app-loader.js" ]; then
             echo "✓ JS file exists"
           else
             echo "✗ JS file is missing!"
             exit 1
           fi
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
